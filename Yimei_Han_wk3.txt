@@ -1,0 +1,136 @@
+2.
+<div class="form">    
+          <fieldset>
+              <label>Number 1</label>
+              <input type="text" id="num1">
+          </fieldset>
+
+      
+          <fieldset>
+              <label>Number 2</label>
+              <input type="text" id="num2">
+          </fieldset>
+
+      
+          <fieldset>
+              <button id="btnAdd">Click to Add</button>
+              <h3>Result</h3>
+              <span id="result">Result here</span>
+          </fieldset>    
+      </div>
+
+const addNums = () => {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let sum = parseInt(num1, 10) + parseInt(num2, 10);
+    document.getElementById("result").innerHTML = sum;
+};
+const btnAdd = document.getElementById("btnAdd");
+btnAdd.addEventListener("click", addNums);
+
+In HTML file I deleted the "onclick" attribute residing in the "button" tag.
+Also, changed the "id" to "btnAdd".
+In JavaScript I added: 
+const btnAdd = document.getElementById("btnAdd");
+btnAdd.addEventListener("click", addNums);
+The addEventListener() method attaches a click event to the button and when the user clicks the button, it triggers the addNums function, which is the second argument passed to addEventListener().
+
+3.
+referenced function:
+While calling a function, instead of passing the values of variables, we pass address of variables(location of variables) to the function known as “Call By References.
+Example:
+function callByReference(varObj) { 
+  varObj.a = 100; 
+  console.log(varObj); 
+} 
+let varObj = {a:1};
+
+invoked (aka called) function:
+Simply call the function by name, then pass in any required parameters in a comma delimited list enclosed in parenthesis.
+Example:
+function sayHello(name) {
+    
+}
+sayHello("Chris");
+
+4.
+named functions:
+A named function is a function declaration if it appears as a statement.
+Example:
+function officer () {
+  return rank() + " Reginald Thistleton";
+  
+  function rank () { return "Captain"; }
+}
+officer()
+  //=> 'Captain Reginald Thistleton'
+
+function expressions:
+A JavaScript function can also be defined using an expression.
+A function expression can be stored in a variable:
+var x = function (a, b) {return a * b};
+After a function expression has been stored in a variable, the variable can be used as a function. Functions stored in variables do not need function names. They are always invoked (called) using the variable name.
+Example:
+alert(foo());
+var foo = function() { return 5; }
+
+5.
+arrow functions:
+An arrow function is defined using a pair of parenthesis that contains the list of parameters (param1, param2, ..., paramN), followed by a fat arrow => and a pair of curly braces {...} that delimits the body statements. Arrow functions allow us to write shorter function syntax.
+Example:
+var hello;
+hello = () => {
+  return "Hello World!";
+}
+document.getElementById("demo").innerHTML = hello();
+
+named functions:
+When the expression has the name specified, this is a named function expression.
+Example:
+const myFunctionVar = function(variable) { 
+  return typeof variable; 
+};
+myFunctionVar.name; // => 'myFunctionVar'
+
+anonymous functions:
+A function is anonymous when it does not have a name (name property is an empty string ''):
+Example:
+(
+  function(variable) {return typeof variable; }
+).name; // => ''
+
+6.
+In the toggle-circle foler
+
+7.
+window.location.reload() means/does:
+Refresh/reload the current page, optionally forcing a re-download of the content.
+Syntax
+var  = window.location.reload(forceget);
+Example:
+window.location.reload();
+
+8.
+git init
+git add hw.txt
+git commit -m "first commit"
+git remote add origin http;//github.com/yimeihan/hw.git
+git push -u origin master
+
+9.
+.git folder
+
+10.
+Nothing disappeared
+yimeis-MBP:toggle-square-master YimeiHan$ ls
+README.md		index.html		package.json		styles
+dist			package-lock.json	scripts
+yimeis-MBP:toggle-square-master YimeiHan$ rm -rf.git
+rm: illegal option -- .
+usage: rm [-f | -i] [-dPRrvW] file ...
+       unlink file
+yimeis-MBP:toggle-square-master YimeiHan$ ls
+README.md		index.html		package.json		styles
+dist			package-lock.json	scripts
+
+
